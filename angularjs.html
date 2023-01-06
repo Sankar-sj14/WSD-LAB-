@@ -1,0 +1,52 @@
+<!DOCTYPE html>    
+ <html>    
+ <head>    
+   <title>Subscriber Details</title>    
+   <link href='https://fonts.googleapis.com/css?family=Charmonman' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>    
+   <script type="text/javascript" src="news.js"></script>    
+ </head> 
+ <style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+
+th{
+  background-color: black;
+  color: aliceblue;
+}
+
+ </style>   
+ <body ng-app="employeeApp">    
+   <div align="center"><h2 style="font-family: 'DynaPuff';font-size: 35px;color: #330033;">SUBSCRIBER INFORMATION</h2></div>    
+   <div ng-controller="employeeCtrl">    
+     <table align="center" border="1" style="font-family: 'Akaya Kanadaka';">    
+       <tr>    
+         <th>ID</th>    
+         <th>Name</th>    
+         <th>Gender</th>
+         <th>DOJ</th>
+         <th>Days Active</th>  
+       </tr>    
+       <tr ng-repeat="subscriber in employees|orderBy:'doj'">    
+         <td>{{subscriber.id}}</td>    
+         <td>{{subscriber.name|uppercase}}</td>    
+         <td>{{subscriber.gender|lowercase}}</td>   
+         <td>{{subscriber.doj|date:"dd/MM/yyyy"}}</td>   
+         <td>{{subscriber.days_active}}</td>      
+       </tr>    
+     </table>    
+   </div>    
+ </body>    
+ </html>    
+
+ 
